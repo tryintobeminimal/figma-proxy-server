@@ -1,7 +1,11 @@
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors'); // Import the cors package
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Use CORS middleware
+app.use(cors()); // This will allow requests from all origins by default
 
 // Proxy route to fetch images
 app.get('/proxy', async (req, res) => {
